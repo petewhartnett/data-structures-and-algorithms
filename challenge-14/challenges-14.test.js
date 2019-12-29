@@ -9,12 +9,8 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-for(var i = 0; i < arr.length; i++){
-arr[i][0].toUpperCase();
-
-     
-}
-return arr;
+var answer = arr.map(string => string.charAt(0).toUpperCase() + string.slice(1, string.length));
+return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,7 +85,17 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+ var answerArr = [];
+arr.forEach( starWarsData =>{
+
+  if (starWarsData.mass > 77){
+    answerArr.push(starWarsData.name);
+  }
+
+})
+var finalAnswer = answerArr.toString().replace(',',' - ');
+return finalAnswer;
+ 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,7 +129,8 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-// Solution code here...
+var answer = /^https:\/\//.test(url);
+return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
